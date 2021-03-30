@@ -10,6 +10,7 @@ module Ogpr
     def initialize(meta)
       @open_graph = Model::OpenGraph.create(meta)
       @twitter_card = Model::TwitterCard.create(meta)
+      @event = Model::Event.create(meta)
       @meta = meta
     end
 
@@ -23,6 +24,10 @@ module Ogpr
 
     def twitter_card?
       @twitter_card != nil
+    end
+
+    def event? 
+      @event != nil
     end
 
     %w(title description url image).each do |key|
@@ -44,7 +49,7 @@ module Ogpr
     end
 
     def to_s
-      "#<Ogpr::Result:#{object_id} @open_graph=#{@open_graph}, @twitter_card=#{@twitter_card}>"
+      "#<Ogpr::Result:#{object_id} @open_graph=#{@open_graph}, @twitter_card=#{@twitter_card}, @event=#{@event}>"
     end
   end
 end
