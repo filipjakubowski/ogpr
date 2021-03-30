@@ -5,7 +5,7 @@ require_relative './model/twitter_card.rb'
 
 module Ogpr
   class Result
-    attr_reader :open_graph, :twitter_card, :meta
+    attr_reader :open_graph, :twitter_card, :meta, :event
 
     def initialize(meta)
       @open_graph = Model::OpenGraph.create(meta)
