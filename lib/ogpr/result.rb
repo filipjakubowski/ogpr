@@ -2,6 +2,7 @@
 
 require_relative './model/open_graph.rb'
 require_relative './model/twitter_card.rb'
+require_relative './model/event.rb'
 
 module Ogpr
   class Result

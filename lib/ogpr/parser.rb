@@ -36,6 +36,9 @@ module Ogpr
           # Always value is in 'content',
           # but value is in 'value' property on twitpic...
           value = elm['content'] || elm['value']
+        elsif (elm['property'] =~ /event:\w+/)
+          key = elm['property']
+          value = elm['content']
         end
 
         if key.nil? || key.empty? || value.nil? || value.empty?
